@@ -28,17 +28,19 @@ CSS = f"""
 :root {{ --page:{PAGE}; --surface:{SURFACE}; --surface2:{SURFACE2}; --ink:{INK}; --ink2:{INK2}; --muted:{MUTED};
         --line:rgba(255,255,255,.09); --blue:{BLUE}; --crit:{CRITICAL}; --warn:{WARNING}; --good:{GOOD}; }}
 html, body, [class*="css"] {{ font-family: "Inter", "Segoe UI", system-ui, -apple-system, sans-serif; }}
-.block-container {{ padding-top: 2.2rem; padding-bottom: 4rem; max-width: 1280px; }}
+/* top padding must clear Streamlit's fixed top bar (3.75rem, taller on a host: Share / GitHub icons) */
+.block-container {{ padding-top: 4.75rem; padding-bottom: 4rem; max-width: 1280px; }}
 h1, h2, h3 {{ letter-spacing: -0.015em; }}
 h1 {{ font-size: 1.9rem !important; font-weight: 650 !important; }}
 h2 {{ font-size: 1.3rem !important; font-weight: 600 !important; margin-top: .6rem !important; }}
 h3 {{ font-size: 1.05rem !important; font-weight: 600 !important; }}
 section[data-testid="stSidebar"] {{ border-right: 1px solid var(--line); }}
-.pi-eyebrow {{ font-size:.72rem; letter-spacing:.14em; text-transform:uppercase; color:var(--blue); font-weight:600; margin-bottom:.15rem; }}
+.pi-eyebrow {{ font-size:.76rem; line-height:1.5; letter-spacing:.14em; text-transform:uppercase; color:var(--blue); font-weight:600; margin-bottom:.15rem; }}
 .pi-lead {{ color:var(--ink2); font-size:1.02rem; line-height:1.6; max-width:70ch; margin:.2rem 0 1.1rem 0; }}
 .pi-card {{ background:var(--surface); border:1px solid var(--line); border-radius:12px; padding:16px 18px; height:100%; }}
-.pi-card .lab {{ color:var(--muted); font-size:.74rem; letter-spacing:.07em; text-transform:uppercase; font-weight:600; }}
-.pi-card .val {{ color:var(--ink); font-size:1.85rem; font-weight:650; line-height:1.15; margin:.3rem 0 .15rem 0; letter-spacing:-.02em; }}
+.pi-card .lab {{ color:var(--muted); font-size:clamp(.62rem, .85vw, .74rem); letter-spacing:.06em; text-transform:uppercase; font-weight:600; hyphens:auto; }}
+/* numbers shrink on narrow screens instead of breaking in the middle */
+.pi-card .val {{ color:var(--ink); font-size:clamp(1.1rem, 2.1vw, 1.85rem); font-weight:650; line-height:1.15; margin:.3rem 0 .15rem 0; letter-spacing:-.02em; word-break:normal; overflow-wrap:normal; }}
 .pi-card .val small {{ font-size:1rem; font-weight:500; color:var(--ink2); }}
 .pi-card .sub {{ color:var(--ink2); font-size:.84rem; line-height:1.45; }}
 .pi-card.crit {{ border-top:3px solid var(--crit); }} .pi-card.warn {{ border-top:3px solid var(--warn); }}
