@@ -1,9 +1,10 @@
 # The only Streamlit config of this project. Streamlit loads the config next to the main script (ui/app.py)
 # last, so this file applies however the app is started: locally or on a host.
 #
-# Do NOT set server.address here. A host must be able to reach the server from outside its container;
-# binding to localhost here makes a hosted app hang at start-up. Local runs are bound to localhost by
-# run_dashboard.py instead (--server.address localhost).
+# Do NOT set [server] options here. They would also apply on a host, where they break things:
+#   server.address = "localhost"       the host cannot reach the app, so it hangs at start-up
+#   server.fileWatcherType = "none"    pushed code changes are not picked up until the app is rebooted
+# Local runs get both from run_dashboard.py instead.
 
 [theme]
 base = "dark"
@@ -20,6 +21,3 @@ toolbarMode = "minimal"
 
 [browser]
 gatherUsageStats = false
-
-[server]
-fileWatcherType = "none"

@@ -44,6 +44,9 @@ Two things a host needs, both learned the hard way on the first deployment (12 O
 - **`ui/.streamlit/config.toml` must not set `server.address`.** Streamlit loads the config next to the main script
   last, so it applies on the host too. Bound to localhost, a hosted app cannot be reached and never finishes starting.
   Local runs are bound to localhost by `run_dashboard.py` instead. There is only this one config file.
+- **The config must not turn the file watcher off either.** The host uses it to pick up pushed changes; with it off, a push
+  did not show until the app was rebooted. It is also switched off only by `run_dashboard.py`. Because that launcher
+  runs without a watcher, restart it after editing code locally.
 
 Vercel cannot host this app. Streamlit needs a long-running server with a WebSocket connection; Vercel runs short
 serverless functions, and the Python packages alone exceed its function size limit.

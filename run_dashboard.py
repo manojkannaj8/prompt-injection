@@ -30,10 +30,12 @@ def main():
     print(f"Dashboard starting at {url}  (press Ctrl+C to stop)")
     if not args.no_browser:
         threading.Timer(4.0, lambda: webbrowser.open(url)).start()
-    # Local use only: listen on localhost. This is set here, not in ui/.streamlit/config.toml, because that
-    # file is also read when the app runs on a host, where the server must be reachable from outside.
+    # Local-only settings. They are set here, not in ui/.streamlit/config.toml, because that file is also
+    # read when the app runs on a host: there the server must be reachable from outside, and the file
+    # watcher must stay on so that pushed changes are picked up. Locally the watcher is off because the
+    # project lives on Google Drive, where file-change events are unreliable.
     cmd = [sys.executable, "-m", "streamlit", "run", "app.py", "--server.port", str(args.port), "--server.headless", "true",
-           "--server.address", "localhost"]
+           "--server.address", "localhost", "--server.fileWatcherType", "none"]
     try:
         sys.exit(subprocess.call(cmd, cwd=UI))
     except KeyboardInterrupt:
