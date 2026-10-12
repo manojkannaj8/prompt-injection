@@ -1,9 +1,12 @@
 # Dashboard dependencies, pinned to the versions it was built and tested with (Python 3.13).
+# Every version here has a ready-made Linux build for Python 3.13 and 3.14 (checked on PyPI), so a host never
+# has to compile anything. pandas is a range for that reason: 2.3.2 (tested locally) has no Python 3.14 build,
+# 2.3.3 and later 2.3.x releases do.
 # scikit-learn is pinned exactly on purpose: ui/cache holds a Stage 1 detector saved with this version.
 # With any other version the dashboard still works, but it refits the detector on first use (about a minute, more memory).
 streamlit==1.55.0
 plotly==6.3.0
-pandas==2.3.2
+pandas>=2.3.2,<2.4
 numpy==2.3.3
 pyarrow==23.0.1
 scikit-learn==1.8.0

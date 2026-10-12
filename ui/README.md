@@ -24,7 +24,7 @@ Built and tested on Python 3.13 (Windows 11). Other Python versions were not tes
 pip install -r ui/requirements.txt
 ```
 
-The versions are pinned to the ones the dashboard was tested with. scikit-learn in particular must stay at 1.8.0 for the
+The versions are pinned to the ones the dashboard was tested with (pandas is a narrow range, see Deploy). scikit-learn in particular must stay at 1.8.0 for the
 shipped `ui/cache` detector to be used; with another version the dashboard refits it on first use.
 `xgboost` and `shap` are not needed for the dashboard. They are needed only to re-run the Part 6 notebook.
 
@@ -34,10 +34,16 @@ The code and the 49 saved result files it reads are published at https://github.
 
 1. https://share.streamlit.io → sign in with the GitHub account that owns the repository.
 2. Create app → Deploy a public app from GitHub → repository `manojkannaj8/prompt-injection`, branch `main`, main file path `ui/app.py`.
-3. Advanced settings → Python 3.13 → Deploy.
+3. Deploy. Python 3.13 or 3.14 both work.
 
-The host starts the app from the repository root, so it uses the root `.streamlit/config.toml`. `ui/.streamlit/config.toml`
-is the local one and additionally binds the server to localhost.
+Two things a host needs, both learned the hard way on the first deployment (12 October 2026):
+
+- **Every pinned package must have a ready-made build for the host's Python.** The host picked Python 3.14 and
+  `pandas 2.3.2` has none, so it tried to compile pandas and sat on "Your app is in the oven". pandas is now a
+  range (`>=2.3.2,<2.4`) that resolves to a release with a 3.14 build.
+- **`ui/.streamlit/config.toml` must not set `server.address`.** Streamlit loads the config next to the main script
+  last, so it applies on the host too. Bound to localhost, a hosted app cannot be reached and never finishes starting.
+  Local runs are bound to localhost by `run_dashboard.py` instead. There is only this one config file.
 
 Vercel cannot host this app. Streamlit needs a long-running server with a WebSocket connection; Vercel runs short
 serverless functions, and the Python packages alone exceed its function size limit.
@@ -96,7 +102,7 @@ ui/
   views/                  one module per page, plus shared charts, record detail and teaching widgets
   tests/                  unittest suites and the read-only check
   cache/                  Stage 1 detector (UI-owned, safe to delete)
-  .streamlit/config.toml  dark theme, local-only server, no tracebacks in the browser
+  .streamlit/config.toml  the only config: dark theme, no tracebacks in the browser (no server.address, see Deploy)
 ```
 
 Three layers, one direction: `views` → `content` / `components` → `core` → saved files.

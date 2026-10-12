@@ -8,7 +8,6 @@
 !/.gitignore
 !/.gitattributes
 !/.github/
-!/.streamlit/
 !/ui/
 !/run_dashboard.py
 !/run_dashboard.bat

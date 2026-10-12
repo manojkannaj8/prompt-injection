@@ -32,9 +32,9 @@ It opens http://localhost:8501. Built and tested on Python 3.13.
 
 1. Go to https://share.streamlit.io and sign in with the GitHub account that owns this repository.
 2. **Create app** → *Deploy a public app from GitHub* → repository `manojkannaj8/prompt-injection`, branch `main`, main file path `ui/app.py`.
-3. Open **Advanced settings**, choose **Python 3.13**, then **Deploy**.
+3. **Deploy**. Python 3.13 or 3.14 both work (3.13 is the version the dashboard was tested on locally).
 
-The dependencies are read from `ui/requirements.txt` and the theme from `.streamlit/config.toml`.
+The dependencies are read from `ui/requirements.txt` and the theme from `ui/.streamlit/config.toml`.
 This app cannot be hosted on Vercel: Streamlit needs a long-running server with a WebSocket connection, and Vercel runs short serverless functions.
 
 ## Pages
