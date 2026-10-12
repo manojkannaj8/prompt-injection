@@ -1,0 +1,6 @@
+harmless set,n,Stage 1 flags (p_inj>=0.5),guard blocks (risk>=0.2)
+AgentDojo harmless tool outputs (all rows),97127,0.0047772504041100824,0.0012869747855900008
+"AgentDojo harmless tool outputs (distinct texts, worst case per text)",7218,0.0036021058464948737,0.0042948185092823495
+AgentDojo clean runs only (rows),11541,0.03526557490685382,0.008751408023568148
+"NotInject, average agent (obey rate 0.19)",339,0.0029498525073746312,0.0
+"NotInject, easiest-to-fool agent (obey rate 0.56)",339,0.0029498525073746312,0.0058997050147492625

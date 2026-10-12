@@ -1,0 +1,44 @@
+protocol,fold,rows,obeyed,obey rate
+Unseen injection task,0,5361,1297,0.24193247528446185
+Unseen injection task,1,5423,1516,0.27955006453992254
+Unseen injection task,2,5344,887,0.1659805389221557
+Unseen injection task,3,5345,952,0.17811038353601497
+Unseen injection task,4,5543,509,0.09182753021829335
+Unseen user task,0,5427,925,0.17044407591671273
+Unseen user task,1,5368,881,0.16412071535022354
+Unseen user task,2,5385,966,0.17938718662952646
+Unseen user task,3,5419,1254,0.23140800885772284
+Unseen user task,4,5417,1135,0.20952556765737493
+Unseen attack style,0,15052,3285,0.21824342280095668
+Unseen attack style,1,3788,108,0.028511087645195353
+Unseen attack style,2,3780,233,0.06164021164021164
+Unseen attack style,3,2136,594,0.27808988764044945
+Unseen attack style,4,2260,941,0.41637168141592923
+Unseen agent (leave one out),Meta-SecAlign-70B,2746,48,0.01747997086671522
+Unseen agent (leave one out),Meta-SecAlign-70B-repeat_user_prompt,2742,46,0.016776075857038657
+Unseen agent (leave one out),claude-3-5-sonnet-20240620,560,213,0.38035714285714284
+Unseen agent (leave one out),claude-3-5-sonnet-20241022,550,7,0.012727272727272728
+Unseen agent (leave one out),claude-3-7-sonnet-20250219,931,47,0.050483351235230935
+Unseen agent (leave one out),claude-3-haiku-20240307,446,54,0.1210762331838565
+Unseen agent (leave one out),claude-3-opus-20240229,367,63,0.17166212534059946
+Unseen agent (leave one out),claude-3-sonnet-20240229,457,168,0.3676148796498906
+Unseen agent (leave one out),command-r,446,19,0.042600896860986545
+Unseen agent (leave one out),command-r-plus,473,6,0.012684989429175475
+Unseen agent (leave one out),gemini-1.5-flash-001,467,77,0.16488222698072805
+Unseen agent (leave one out),gemini-1.5-flash-002,384,22,0.057291666666666664
+Unseen agent (leave one out),gemini-1.5-pro-001,462,172,0.3722943722943723
+Unseen agent (leave one out),gemini-1.5-pro-002,522,107,0.2049808429118774
+Unseen agent (leave one out),gemini-2.0-flash-001,530,134,0.2528301886792453
+Unseen agent (leave one out),gemini-2.0-flash-exp,395,107,0.2708860759493671
+Unseen agent (leave one out),gpt-3.5-turbo-0125,481,64,0.13305613305613306
+Unseen agent (leave one out),gpt-4-0125-preview,577,354,0.6135181975736569
+Unseen agent (leave one out),gpt-4-turbo-2024-04-09,544,179,0.3290441176470588
+Unseen agent (leave one out),gpt-4o-2024-05-13,6095,1892,0.31041837571780145
+Unseen agent (leave one out),gpt-4o-2024-05-13-repeat_user_prompt,589,175,0.29711375212224106
+Unseen agent (leave one out),gpt-4o-2024-05-13-spotlighting_with_delimiting,573,262,0.4572425828970332
+Unseen agent (leave one out),gpt-4o-2024-05-13-tool_filter,536,43,0.08022388059701492
+Unseen agent (leave one out),gpt-4o-2024-05-13-transformers_pi_detector,145,50,0.3448275862068966
+Unseen agent (leave one out),gpt-4o-mini-2024-07-18,556,169,0.3039568345323741
+Unseen agent (leave one out),meta-llama_Llama-3-70b-chat-hf,407,161,0.3955773955773956
+Unseen agent (leave one out),meta-llama_Llama-3.3-70B-Instruct,2115,367,0.1735224586288416
+Unseen agent (leave one out),meta-llama_Llama-3.3-70B-Instruct-repeat_user_prompt,1920,155,0.08072916666666667

@@ -1,0 +1,279 @@
+{
+ "n_exposure_rows": 27016,
+ "obey_rate": 0.19103494225644063,
+ "T_HIGH": 0.2,
+ "xgb_device": "cuda",
+ "xgboost": "3.4.1",
+ "shap": "0.53.0",
+ "pr_auc": {
+  "base_raw_random": 0.3871366205895186,
+  "lr_raw_random": 0.7478575514235175,
+  "xgb_raw_random": 0.857844061786726,
+  "base_raw_inj": 0.3452398744690701,
+  "lr_raw_inj": 0.6269813990588008,
+  "xgb_raw_inj": 0.6638523137861227,
+  "base_raw_user": 0.3808756390179942,
+  "lr_raw_user": 0.7096706308224598,
+  "xgb_raw_user": 0.7703881138208909,
+  "base_raw_attack": 0.25141644889930637,
+  "lr_raw_attack": 0.5383267840595293,
+  "xgb_raw_attack": 0.5269708051073355,
+  "lr_raw_agent": 0.5131557410759662,
+  "xgb_raw_agent": 0.5264748243517304,
+  "lr_masked_inj": 0.6018152841344446,
+  "xgb_masked_inj": 0.6519373665724634,
+  "lr_masked_user": 0.7007638282509113,
+  "xgb_masked_user": 0.7664420984508242,
+  "lr_masked_attack": 0.5406831945081282,
+  "xgb_masked_attack": 0.521973012381413
+ },
+ "pr_auc_xgb_saved_inj": 0.6454733000638933,
+ "refit_vs_saved_spearman": 0.9758114857023191,
+ "family_share_raw": {
+  "words": 0.3781000077724457,
+  "user task meaning": 0.13689999282360077,
+  "tool output meaning": 0.164000004529953,
+  "task/output similarity": 0.003800000064074993,
+  "flags": 0.053599998354911804,
+  "tool": 0.00139999995008111,
+  "agent": 0.2621000111103058
+ },
+ "family_share_masked": {
+  "words": 0.3228999972343445,
+  "user task meaning": 0.13619999587535858,
+  "tool output meaning": 0.17249999940395355,
+  "task/output similarity": 0.004399999976158142,
+  "flags": 0.10029999911785126,
+  "tool": 0.001500000013038516,
+  "agent": 0.2621000111103058
+ },
+ "shortcut": {
+  "raw": {
+   "word features used by the model": 1582.0,
+   "wrapper terms among them": 157.0,
+   "wrapper share of word SHAP": 0.2921,
+   "model-name share of word SHAP": 0.0964,
+   "wrapper terms in top 20 words": 9.0,
+   "PR-AUC unseen injection task": 0.6639,
+   "PR-AUC unseen attack style": 0.527
+  },
+  "masked": {
+   "word features used by the model": 1557.0,
+   "wrapper terms among them": 96.0,
+   "wrapper share of word SHAP": 0.1917,
+   "model-name share of word SHAP": 0.097,
+   "wrapper terms in top 20 words": 4.0,
+   "PR-AUC unseen injection task": 0.6519,
+   "PR-AUC unseen attack style": 0.522
+  }
+ },
+ "stage1": {
+  "raw": {
+   "ROC-AUC unseen user task": 0.99987,
+   "PR-AUC": 0.99966,
+   "recall at p>=0.5": 0.99949,
+   "false alarms at p>=0.5": 0.00828
+  },
+  "masked": {
+   "ROC-AUC unseen user task": 0.99985,
+   "PR-AUC": 0.99961,
+   "recall at p>=0.5": 0.99954,
+   "false alarms at p>=0.5": 0.0081
+  }
+ },
+ "decision_levels": {
+  "SAFE": {
+   "n": 395.0,
+   "obeyed": 11.0,
+   "obey_rate": 0.0278,
+   "share of all obeyed attacks": 0.0021
+  },
+  "SUSPICIOUS": {
+   "n": 17997.0,
+   "obeyed": 842.0,
+   "obey_rate": 0.0468,
+   "share of all obeyed attacks": 0.1631
+  },
+  "HIGH RISK": {
+   "n": 8624.0,
+   "obeyed": 4308.0,
+   "obey_rate": 0.4995,
+   "share of all obeyed attacks": 0.8347
+  }
+ },
+ "faithfulness": [
+  {
+   "model": "XGBoost Stage 2 (feature switch-off)",
+   "words removed": 1,
+   "drop, top-attributed": 0.5652,
+   "drop, random": 0.0164,
+   "share of alerts where top > random": 0.962,
+   "n alerts": 1500
+  },
+  {
+   "model": "XGBoost Stage 2 (feature switch-off)",
+   "words removed": 3,
+   "drop, top-attributed": 1.1729,
+   "drop, random": 0.0465,
+   "share of alerts where top > random": 0.992,
+   "n alerts": 1500
+  },
+  {
+   "model": "XGBoost Stage 2 (feature switch-off)",
+   "words removed": 5,
+   "drop, top-attributed": 1.6418,
+   "drop, random": 0.0827,
+   "share of alerts where top > random": 0.998,
+   "n alerts": 1500
+  },
+  {
+   "model": "XGBoost Stage 2 (feature switch-off)",
+   "words removed": 10,
+   "drop, top-attributed": 2.5318,
+   "drop, random": 0.1614,
+   "share of alerts where top > random": 1.0,
+   "n alerts": 1500
+  },
+  {
+   "model": "XGBoost Stage 2 (feature switch-off)",
+   "words removed": 20,
+   "drop, top-attributed": 3.2703,
+   "drop, random": 0.318,
+   "share of alerts where top > random": 0.9993,
+   "n alerts": 1500
+  },
+  {
+   "model": "Logistic Regression Stage 2 (words deleted from text)",
+   "words removed": 1,
+   "drop, top-attributed": 0.3855,
+   "drop, random": 0.0262,
+   "share of alerts where top > random": 0.9967,
+   "n alerts": 600
+  },
+  {
+   "model": "Logistic Regression Stage 2 (words deleted from text)",
+   "words removed": 3,
+   "drop, top-attributed": 0.8709,
+   "drop, random": 0.0841,
+   "share of alerts where top > random": 1.0,
+   "n alerts": 600
+  },
+  {
+   "model": "Logistic Regression Stage 2 (words deleted from text)",
+   "words removed": 5,
+   "drop, top-attributed": 1.1631,
+   "drop, random": 0.1306,
+   "share of alerts where top > random": 1.0,
+   "n alerts": 600
+  },
+  {
+   "model": "Logistic Regression Stage 2 (words deleted from text)",
+   "words removed": 10,
+   "drop, top-attributed": 1.6496,
+   "drop, random": 0.2751,
+   "share of alerts where top > random": 1.0,
+   "n alerts": 600
+  },
+  {
+   "model": "Logistic Regression Stage 2 (words deleted from text)",
+   "words removed": 20,
+   "drop, top-attributed": 2.2373,
+   "drop, random": 0.5428,
+   "share of alerts where top > random": 0.9983,
+   "n alerts": 600
+  }
+ ],
+ "calibration": [
+  {
+   "score": "XGBoost raw (saved)",
+   "ECE": 0.0615,
+   "Brier": 0.1059,
+   "mean score": 0.2525,
+   "obey rate": 0.191
+  },
+  {
+   "score": "P(obey) calibrated (risk_scores.parquet)",
+   "ECE": 0.0138,
+   "Brier": 0.0983,
+   "mean score": 0.19,
+   "obey rate": 0.191
+  }
+ ],
+ "threshold_metrics": [
+  {
+   "decision": "Stage 1: p_inj >= 0.5 vs injection present (all tool outputs)",
+   "TP": 38819,
+   "FP": 464,
+   "FN": 608,
+   "TN": 96663,
+   "precision": 0.9882,
+   "recall": 0.9846,
+   "F1": 0.9864,
+   "false positive rate": 0.0048,
+   "false negative rate": 0.0154,
+   "accuracy (secondary)": 0.9921
+  },
+  {
+   "decision": "Guard: risk >= 0.2 vs agent obeyed (exposure rows)",
+   "TP": 4308,
+   "FP": 4316,
+   "FN": 853,
+   "TN": 17539,
+   "precision": 0.4995,
+   "recall": 0.8347,
+   "F1": 0.625,
+   "false positive rate": 0.1975,
+   "false negative rate": 0.1653,
+   "accuracy (secondary)": 0.8087
+  },
+  {
+   "decision": "Stage 1 alone as a blocker: p_inj >= 0.5 vs agent obeyed (exposure rows)",
+   "TP": 5148,
+   "FP": 21467,
+   "FN": 13,
+   "TN": 388,
+   "precision": 0.1934,
+   "recall": 0.9975,
+   "F1": 0.324,
+   "false positive rate": 0.9822,
+   "false negative rate": 0.0025,
+   "accuracy (secondary)": 0.2049
+  }
+ ],
+ "over_defence": [
+  {
+   "harmless set": "AgentDojo harmless tool outputs (all rows)",
+   "n": 97127,
+   "Stage 1 flags (p_inj>=0.5)": 0.00478,
+   "guard blocks (risk>=0.2)": 0.00129
+  },
+  {
+   "harmless set": "AgentDojo harmless tool outputs (distinct texts, worst case per text)",
+   "n": 7218,
+   "Stage 1 flags (p_inj>=0.5)": 0.0036,
+   "guard blocks (risk>=0.2)": 0.00429
+  },
+  {
+   "harmless set": "AgentDojo clean runs only (rows)",
+   "n": 11541,
+   "Stage 1 flags (p_inj>=0.5)": 0.03527,
+   "guard blocks (risk>=0.2)": 0.00875
+  },
+  {
+   "harmless set": "NotInject, average agent (obey rate 0.19)",
+   "n": 339,
+   "Stage 1 flags (p_inj>=0.5)": 0.00295,
+   "guard blocks (risk>=0.2)": 0.0
+  },
+  {
+   "harmless set": "NotInject, easiest-to-fool agent (obey rate 0.56)",
+   "n": 339,
+   "Stage 1 flags (p_inj>=0.5)": 0.00295,
+   "guard blocks (risk>=0.2)": 0.0059
+  }
+ ],
+ "alerts": {
+  "SUSPICIOUS": 18315,
+  "HIGH RISK": 8725
+ }
+}

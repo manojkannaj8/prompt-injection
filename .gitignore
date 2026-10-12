@@ -1,0 +1,81 @@
+# Whitelist: only the dashboard and the saved result files it reads are published.
+# Notebooks, embeddings, refitted models, the written report and the project notes stay local.
+# The list of data files mirrors ui/core/paths.py.
+
+/*
+
+# repository plumbing and the dashboard
+!/.gitignore
+!/.gitattributes
+!/.github/
+!/.streamlit/
+!/ui/
+!/run_dashboard.py
+!/run_dashboard.bat
+
+# saved result files in the project root
+!/fig_security_vs_usefulness.png
+!/notinject_scores.parquet
+!/oof_xgb_fold_inj.npy
+!/replay_all_configs.csv
+!/replay_leave_one_agent_out.csv
+!/risk_scores.parquet
+!/runs_index.parquet
+!/samples_features.parquet
+!/stage2_exposure.parquet
+
+# Part 6 outputs the dashboard reads
+!/part6/
+/part6/*
+!/part6/alerts_examples.csv
+!/part6/alerts_with_reasons.parquet
+!/part6/fig_attack_success_per_agent.png
+!/part6/fig_calibration.png
+!/part6/fig_confusion_matrices.png
+!/part6/fig_faithfulness.png
+!/part6/fig_leave_one_agent_out.png
+!/part6/fig_lr_coefficients.png
+!/part6/fig_over_defence.png
+!/part6/fig_pr_roc_unseen_injection_task.png
+!/part6/fig_random_vs_grouped_splits.png
+!/part6/fig_shap_beeswarm_raw.png
+!/part6/fig_shap_by_family.png
+!/part6/fig_shap_summary_raw_vs_masked.png
+!/part6/part6_summary.json
+!/part6/shap_global_stage2_xgb_masked.csv
+!/part6/shap_global_stage2_xgb_raw.csv
+!/part6/table_agent_shap.csv
+!/part6/table_attack_success_per_agent.csv
+!/part6/table_calibration.csv
+!/part6/table_decision_levels.csv
+!/part6/table_decisions_by_output_type.csv
+!/part6/table_faithfulness.csv
+!/part6/table_label_balance.csv
+!/part6/table_lr_coefficients_stage1_masked.csv
+!/part6/table_lr_coefficients_stage1_raw.csv
+!/part6/table_lr_coefficients_stage2_masked.csv
+!/part6/table_lr_coefficients_stage2_raw.csv
+!/part6/table_over_defence.csv
+!/part6/table_shap_by_family.csv
+!/part6/table_shortcut_check.csv
+!/part6/table_stage1_raw_vs_masked.csv
+!/part6/table_stage2_results.csv
+!/part6/table_threshold_metrics.csv
+!/part6/cache/
+/part6/cache/*
+!/part6/cache/oof_base_raw_inj.npy
+!/part6/cache/oof_lr_raw_inj.npy
+!/part6/cache/oof_xgb_raw_inj.npy
+
+# report diagrams
+!/report_figures/
+/report_figures/*
+!/report_figures/fig_architecture.png
+!/report_figures/fig_decision_rule.png
+!/report_figures/fig_pipeline.png
+
+# never
+__pycache__/
+*.pyc
+desktop.ini
+.DS_Store

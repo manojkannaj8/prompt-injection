@@ -1,0 +1,14 @@
+# Dashboard dependencies, pinned to the versions it was built and tested with (Python 3.13).
+# scikit-learn is pinned exactly on purpose: ui/cache holds a Stage 1 detector saved with this version.
+# With any other version the dashboard still works, but it refits the detector on first use (about a minute, more memory).
+streamlit==1.55.0
+plotly==6.3.0
+pandas==2.3.2
+numpy==2.3.3
+pyarrow==23.0.1
+scikit-learn==1.8.0
+scipy==1.16.2
+joblib==1.5.3
+
+# The tests in ui/tests use only the standard library (unittest) plus the packages above.
+# xgboost and shap are NOT needed by the dashboard. They are needed only to re-run the Part 6 notebook.

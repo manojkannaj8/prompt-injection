@@ -1,0 +1,3 @@
+text,word features used by the model,wrapper terms among them,wrapper share of word SHAP,model-name share of word SHAP,wrapper terms in top 20 words,PR-AUC unseen injection task,PR-AUC unseen attack style
+raw,1582,157,0.29212176387799077,0.09635804476106605,9,0.6638523137861227,0.5269708051073355
+masked,1557,96,0.19169520236941262,0.09700099548694163,4,0.6519373665724634,0.521973012381413

@@ -1,0 +1,7 @@
+# Store every file byte for byte. No line-ending conversion: the result tables and data files must be
+# identical to the ones the notebooks wrote, and ui/cache is validated against the size of samples_features.parquet.
+* -text
+*.parquet binary
+*.npy binary
+*.joblib binary
+*.png binary

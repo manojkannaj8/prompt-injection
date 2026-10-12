@@ -1,0 +1,20 @@
+[theme]
+base = "dark"
+primaryColor = "#3987e5"
+backgroundColor = "#0d1117"
+secondaryBackgroundColor = "#151a22"
+textColor = "#e6ebf2"
+font = "sans serif"
+
+[client]
+# Never show Python tracebacks or file paths in the browser. Details go to the terminal.
+showErrorDetails = false
+toolbarMode = "minimal"
+
+[browser]
+gatherUsageStats = false
+
+[server]
+# Local use only.
+address = "localhost"
+fileWatcherType = "none"

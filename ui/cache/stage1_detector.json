@@ -1,0 +1,15 @@
+{
+ "n_training_rows": 136554,
+ "n_distinct_texts": 16714,
+ "n_features": 14752,
+ "recipe": "day2-cell2-v1",
+ "sklearn": "1.8.0",
+ "source_bytes": 61606032,
+ "check": {
+  "same_features": true,
+  "coef_max_abs_diff": 4.440892098500626e-16,
+  "notinject_max_abs_diff": 1.9065597210987661e-06,
+  "notinject_n": 339,
+  "passed": true
+ }
+}

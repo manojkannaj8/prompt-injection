@@ -1,0 +1,11 @@
+model,words removed,"drop, top-attributed","drop, random",share of alerts where top > random,n alerts
+XGBoost Stage 2 (feature switch-off),1,0.5652209520339966,0.01638655923306942,0.962,1500
+XGBoost Stage 2 (feature switch-off),3,1.1728572845458984,0.046541325747966766,0.992,1500
+XGBoost Stage 2 (feature switch-off),5,1.6417607069015503,0.08265171200037003,0.998,1500
+XGBoost Stage 2 (feature switch-off),10,2.53177547454834,0.1614130586385727,1.0,1500
+XGBoost Stage 2 (feature switch-off),20,3.270254611968994,0.3179504871368408,0.9993333333333333,1500
+Logistic Regression Stage 2 (words deleted from text),1,0.38549432076739204,0.026227536538293045,0.9966666666666667,600
+Logistic Regression Stage 2 (words deleted from text),3,0.8708763101857006,0.08408608339983847,1.0,600
+Logistic Regression Stage 2 (words deleted from text),5,1.1630952915563149,0.13060754169669755,1.0,600
+Logistic Regression Stage 2 (words deleted from text),10,1.649637399315682,0.27509163278627785,1.0,600
+Logistic Regression Stage 2 (words deleted from text),20,2.2373184121439667,0.5427966724359732,0.9983333333333333,600

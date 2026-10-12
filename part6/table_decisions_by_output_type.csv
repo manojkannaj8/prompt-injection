@@ -1,0 +1,4 @@
+kind,SAFE,SUSPICIOUS,HIGH RISK
+exposure (first injected output),395,17997,8624
+"harmless output, attacked run",33152,0,0
+"harmless output, clean run",11122,318,101
